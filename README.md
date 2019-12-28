@@ -1,4 +1,7 @@
-# vue-test
+# vue-todolist
+
+vue-todolist is a ToDo list web app prototype. It was written in Vue for a web development course. 
+Semantic-UI was used to improve the UI. 
 
 ## Project setup
 ```
