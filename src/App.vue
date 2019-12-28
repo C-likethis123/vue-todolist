@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" @click="removeTagList($event)">
     <NavBar></NavBar>
     <SearchDisplay></SearchDisplay>
     <ToDoListDisplay></ToDoListDisplay>
@@ -13,11 +13,20 @@ import ToDoListDisplay from "@/components/ToDoListDisplay.vue";
 import SearchDisplay from "@/components/SearchDisplay.vue";
 
 @Component({ components: { NavBar, ToDoListDisplay, SearchDisplay } })
-export default class App extends Vue {}
+export default class App extends Vue {
+  removeTagList(event: Event) {
+    const menu = document.body.querySelector(".menu");
+    menu.style.display = "none";
+    menu.childNodes.forEach(element => (element.style.display = "none"));
+  }
+}
 </script>
 
 <style lang="css">
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+#app {
+  height: 100%;
+}
 
 * {
   font-family: "Open Sans";

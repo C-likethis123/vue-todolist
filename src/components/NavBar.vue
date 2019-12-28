@@ -27,7 +27,7 @@ export default class NavBar extends Vue {
     background-color: #5DBCD2;
     display: flex;
     justify-content: space-between;
-    height: 10%;
+    height: fit-content;
     width: auto;
 }
 
