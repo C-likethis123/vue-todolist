@@ -7,8 +7,7 @@
       </button>
     </div>
 
-    <div class="ui multiple dropdown" @focus="displayTagList" @focusout="removeTagList" tabindex="0">
-      <input type="hidden" name="filters" />
+    <div class="ui multiple dropdown" @click="displayTagList($event)" >
       <i class="filter icon"></i>
       <span class="text">Filter Posts</span>
       <div class="menu">
@@ -17,10 +16,14 @@
           <input type="text" placeholder="Search tags..." />
         </div>
         <div class="divider"></div>
-        <div class="header">
-          <i class="tags icon"></i>
-          Tag Label
+        <div class="divider">
+          <div class="header">
+            <i class="tags icon"></i>
+            Tag Label
+          </div>
         </div>
+        <div class="divider"></div>
+
         <div class="scrolling menu">
           <div class="item" data-value="important">
             <div class="ui red empty circular label"></div>Important
@@ -49,6 +52,7 @@
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from "vue-property-decorator";
 import { searchService } from "../services/SearchService";
+// import vClickOutside from 'v-click-outside';
 
 @Component
 export default class SearchDisplay extends Vue {
@@ -59,16 +63,11 @@ export default class SearchDisplay extends Vue {
     searchService.searchKeywords = newVal;
   }
 
-  displayTagList() {
-      const menu = document.body.querySelector(".menu");
-      menu.style.display = "initial";
-      menu.childNodes.forEach((element) => element.style.display = "initial");
-  }
-
-  removeTagList() {
-      const menu = document.body.querySelector(".menu");
-      menu.style.display = "none";
-      menu.childNodes.forEach((element) => element.style.display = "none");
+  displayTagList(event: Event) {
+    event.stopPropagation();
+    const menu = document.body.querySelector(".menu");
+    menu.style.display = "initial";
+    menu.childNodes.forEach((element) => element.style.display = "initial");
   }
 }
 </script>
