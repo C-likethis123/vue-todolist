@@ -1,15 +1,16 @@
 <template>
       <div class="item">
-        {{task}}
+        {{task.task}}
       </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
+import {IToDo} from "../services/ToDoList";
 
 @Component
 export default class ToDo extends Vue {
-    @Prop(String) readonly task! : string
+    @Prop(IToDo) readonly task!: IToDo;
 }
 </script>
 
@@ -38,5 +39,11 @@ export default class ToDo extends Vue {
     margin-bottom: 5px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.item:hover:before {
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Check_mark_9x9.svg/768px-Check_mark_9x9.svg.png);
 }
 </style>
