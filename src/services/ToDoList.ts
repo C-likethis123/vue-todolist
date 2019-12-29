@@ -35,16 +35,18 @@ export const todolists: IToDoList[] = [
     { title: 'One off tasks', contents: todosContentsOneOff },
   ];
 
+export const listChosen = {
+    listChosen: '',
+};
+
 export function addTask(listChosen: string, taskToAdd: string) {
     let todolist: IToDoList;
 
-    if (listChosen === 'dailies') {
+    if (listChosen === 'Dailies') {
         todolist = todolists[0].contents;
     } else {
         todolist = todolists[1].contents;
     }
-
-    console.log(todolist);
 
     todolist.push({
         task: taskToAdd,
