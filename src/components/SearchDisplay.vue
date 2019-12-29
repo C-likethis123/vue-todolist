@@ -52,7 +52,6 @@
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from "vue-property-decorator";
 import { searchService } from "../services/SearchService";
-// import vClickOutside from 'v-click-outside';
 
 @Component
 export default class SearchDisplay extends Vue {
