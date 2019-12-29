@@ -1,4 +1,13 @@
-import {IToDo, IToDoList} from '@/components/IToDoListDisplay';
+export interface IToDo {
+    task: string;
+    isCompleted: boolean;
+    tags?: string[];
+}
+
+export interface IToDoList {
+    title: string;
+    contents: IToDo[];
+}
 
 const todosContentsDailies: IToDo[] = [
     {
@@ -15,7 +24,7 @@ const todosContentsDailies: IToDo[] = [
     }
   ];
 
-const todosContentsOneOff = [
+const todosContentsOneOff: IToDo[] = [
     {
       task: "Do some homework",
       isCompleted: false
