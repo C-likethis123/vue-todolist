@@ -1,6 +1,6 @@
 <template>
   <div class="ui modal center">
-    <div class="header">Header</div>
+    <div class="header">Add a New To Do</div>
     <div class="content">
       <div class="ui form">
         <div class="field">
@@ -11,7 +11,7 @@
     </div>
     <div class="actions">
       <div class="ui button" @click="addNewTask">Add Task</div>
-      <div class="ui cancel button" @click="closeModal">Cancel</div>
+      <div class="ui button" @click="closeModal">Cancel</div>
     </div>
   </div>
 </template>
