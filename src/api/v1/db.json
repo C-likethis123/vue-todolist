@@ -1,0 +1,38 @@
+{"db": [{"id": 1,
+    "title": "Dailies",
+    "contents": [{
+        "id": 1,
+        "task": "Do something",
+        "isCompleted": false,
+        "isDailies": true
+    }, {
+        "id": 2,
+        "task": "Do something",
+        "isCompleted": false,
+        "isDailies": true
+    }, {
+        "id": 3,
+        "task": "Do something",
+        "isCompleted": false,
+        "isDailies": true
+    }]
+}, {
+    "id": 2,
+    "title": "One off tasks",
+    "contents": [{
+        "id": 1,
+        "task": "Do something",
+        "isCompleted": false,
+        "isDailies": false
+    }, {
+        "id": 2,
+        "task": "Complete a one off task",
+        "isCompleted": false,
+        "isDailies": false
+    }, {
+        "id": 3,
+        "task": "Do something",
+        "isCompleted": false,
+        "isDailies": false
+    }]
+}]}
